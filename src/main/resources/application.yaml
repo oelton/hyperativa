@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: crud
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    username: myuser
+    password: secret
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  docker:
+    compose:
+      enabled: true
+
+api:
+  security:
+    token:
+      # JWT Secret: OBRIGATÓRIO definir JWT_SECRET como variável de ambiente em produção
+      # Deve ter no mínimo 256 bits (32 caracteres) para HS256
+      # Gerar com: openssl rand -base64 32
+      secret: ${JWT_SECRET:my-secret-key-that-is-at-least-256-bits-long-for-security}
+      # Expiração do token em milissegundos (86400000ms = 24 horas)
+      expiration: ${JWT_EXPIRATION:86400000}
+      # Issuer - identifica quem emitiu o token
+      issuer: ${JWT_ISSUER:crud-api}
+      # Audience - identifica para quem o token foi emitido
+      audience: ${JWT_AUDIENCE:crud-api-users}
