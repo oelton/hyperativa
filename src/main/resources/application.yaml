@@ -23,7 +23,7 @@ api:
       # JWT Secret: OBRIGATÓRIO definir JWT_SECRET como variável de ambiente em produção
       # Deve ter no mínimo 256 bits (32 caracteres) para HS256
       # Gerar com: openssl rand -base64 32
-      secret: ${JWT_SECRET:my-secret-key-that-is-at-least-256-bits-long-for-security}
+      secret: ${JWT_SECRET:X7kP9mN2vQ8rT4wY1zA5bC3dE6fG0hJ2iL5nO7pR9sU2tV4xZ6}
       # Expiração do token em milissegundos (86400000ms = 24 horas)
       expiration: ${JWT_EXPIRATION:86400000}
       # Issuer - identifica quem emitiu o token

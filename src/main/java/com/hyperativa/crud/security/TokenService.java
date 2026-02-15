@@ -41,7 +41,7 @@ public class TokenService {
         if (secret == null || secret.length() < 32) {
             log.warn("JWT_SECRET deve ter no mínimo 32 caracteres (256 bits) para HS256!");
         }
-        if (secret.equals("my-secret-key-that-is-at-least-256-bits-long-for-security")) {
+        if (secret.equals("X7kP9mN2vQ8rT4wY1zA5bC3dE6fG0hJ2iL5nO7pR9sU2tV4xZ6")) {
             log.warn("JWT_SECRET usando valor padrão! Configure JWT_SECRET em produção!");
         }
     }
